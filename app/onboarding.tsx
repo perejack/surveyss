@@ -38,7 +38,7 @@ export default function OnboardingScreen() {
   const slidesRef = useRef<FlatList>(null);
 
   interface ViewableInfo {
-    viewableItems: Array<{ index?: number }>;
+    viewableItems: Array<{ index: number | null }>;
     changed: Array<any>;
   }
 
