@@ -20,7 +20,7 @@ interface AuthState {
   checkAuth: () => Promise<boolean>;
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
+export const useAuthStore = create<AuthState>()((set) => ({
   isAuthenticated: false,
   user: null,
   signIn: async (email: string, password: string) => {
@@ -53,4 +53,4 @@ export const useAuthStore = create<AuthState>((set) => ({
     set({ isAuthenticated, user: session?.user || null });
     return isAuthenticated;
   },
-}));
+})));

@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create, StateCreator } from 'zustand';
 import { supabase } from '@/lib/supabase';
 import { useUserStore } from './userStore';
 import { AuthResponse, AuthError, User } from '@supabase/supabase-js';
@@ -31,7 +31,7 @@ interface AuthState {
   findEmailByUsername: (username: string) => Promise<string | null>;
 }
 
-export const useAuthStore = create<AuthState>((set, get) => ({
+export const useAuthStore = create<AuthState>()(((set, get) => ({
   user: null,
   profile: null,
   isLoading: false,
@@ -260,4 +260,4 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       set({ error: (error as Error).message, isLoading: false });
     }
   },
-}));
+})));
