@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ViewStyle } from 'react-native';
+import { View, Text, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import Colors from '@/constants/Colors';
 import Layout from '@/constants/Layout';
 
@@ -8,7 +8,7 @@ interface BadgeProps {
   color?: string;
   textColor?: string;
   size?: 'small' | 'medium' | 'large';
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }
 
 export default function Badge({
