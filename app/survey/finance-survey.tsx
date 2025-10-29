@@ -99,7 +99,7 @@ export default function FinanceSurveyScreen() {
   
   // State variables
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState<Record<string, any>>({});
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   
