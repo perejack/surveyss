@@ -164,7 +164,7 @@ export default function SurveyScreen() {
   // Timer countdown
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prevTime) => {
+      setTimeLeft((prevTime: number) => {
         if (prevTime <= 1) {
           clearInterval(timer);
           return 0;

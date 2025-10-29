@@ -53,4 +53,4 @@ export const useAuthStore = create<AuthState>()((set) => ({
     set({ isAuthenticated, user: session?.user || null });
     return isAuthenticated;
   },
-})));
+}));

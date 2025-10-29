@@ -110,7 +110,7 @@ export default function FinanceSurveyScreen() {
   // Timer effect
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
+      setTimeLeft((prev: number) => {
         if (prev <= 1) {
           clearInterval(timer);
           return 0;
@@ -136,18 +136,18 @@ export default function FinanceSurveyScreen() {
   const currentQuestion = sampleFinanceQuestions[currentQuestionIndex];
   
   // Handlers for different question types
-  const handleSingleChoice = (optionId) => {
+  const handleSingleChoice = (optionId: string) => {
     setAnswers({ ...answers, [currentQuestion.id]: optionId });
   };
   
-  const handleMultipleChoice = (optionId) => {
+  const handleMultipleChoice = (optionId: string) => {
     const currentSelections = answers[currentQuestion.id] || [];
     
     if (currentSelections.includes(optionId)) {
       // Remove option if already selected
       setAnswers({
         ...answers,
-        [currentQuestion.id]: currentSelections.filter(id => id !== optionId)
+        [currentQuestion.id]: currentSelections.filter((id: string) => id !== optionId)
       });
     } else {
       // Add option if not already selected

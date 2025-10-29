@@ -137,7 +137,7 @@ export default function FinancePremiumSurvey1Screen() {
   // Timer effect
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
+      setTimeLeft((prev: number) => {
         if (prev <= 1) {
           clearInterval(timer);
           return 0;

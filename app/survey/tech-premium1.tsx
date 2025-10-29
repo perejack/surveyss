@@ -153,7 +153,7 @@ export default function TechPremiumSurvey1Screen() {
   // Timer effect
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prevTime) => {
+      setTimeLeft((prevTime: number) => {
         if (prevTime <= 1) {
           clearInterval(timer);
           return 0;

@@ -110,7 +110,7 @@ export default function TechSurveyScreen() {
   // Timer effect
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
+      setTimeLeft((prev: number) => {
         if (prev <= 1) {
           clearInterval(timer);
           return 0;
