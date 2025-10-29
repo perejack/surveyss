@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ViewStyle } from 'react-native';
 import Colors from '@/constants/Colors';
 import Layout from '@/constants/Layout';
 
@@ -8,6 +8,7 @@ interface BadgeProps {
   color?: string;
   textColor?: string;
   size?: 'small' | 'medium' | 'large';
+  style?: ViewStyle;
 }
 
 export default function Badge({
@@ -15,6 +16,7 @@ export default function Badge({
   color = Colors.light.primary,
   textColor = '#FFF',
   size = 'medium',
+  style,
 }: BadgeProps) {
   const badgeSize = {
     small: {
@@ -47,6 +49,7 @@ export default function Badge({
           paddingVertical: badgeSize[size].paddingVertical,
           borderRadius: badgeSize[size].borderRadius,
         },
+        style,
       ]}
     >
       <Text
