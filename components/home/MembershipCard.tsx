@@ -11,7 +11,7 @@ interface MembershipCardProps {
 }
 
 export default function MembershipCard({ tier, onPress }: MembershipCardProps) {
-  const membershipColors = {
+  const membershipColors: Record<string, readonly [string, string]> = {
     Basic: ['#7380c2', '#6C63FF'],
     Premium: ['#4ECDC4', '#26A69A'],
     Elite: ['#F97316', '#F59E0B']
